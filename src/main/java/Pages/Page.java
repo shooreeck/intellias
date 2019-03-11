@@ -23,11 +23,7 @@ public class Page {
         PageFactory.initElements(driver, this);
     }
 
-    protected void open() {
-        driver.get(this.pageUrl);
-    }
-
-    protected boolean isPageLoaded() {
+    public boolean isPageLoaded() {
         try {
             await().atMost(30, TimeUnit.SECONDS).until(() ->
                     ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete"));
@@ -35,6 +31,10 @@ public class Page {
             return false;
         }
         return true;
+    }
+
+    protected void open() {
+        driver.get(this.pageUrl);
     }
 
     protected String getPageTitle() {

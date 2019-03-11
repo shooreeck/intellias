@@ -47,7 +47,7 @@ public class SettingsClass {
     }
 
     private static ChromeOptions createChromeConfig() {
-        ChromeOptions options = new ChromeOptions();
+        var options = new ChromeOptions();
         if (System.getProperty("os.name").toLowerCase().contains("mac")) {
             options.addArguments("start-fullscreen");
         }
@@ -58,7 +58,7 @@ public class SettingsClass {
     }
 
     private static FirefoxOptions setFirefoxProfile() {
-        FirefoxOptions firefoxOptions = new FirefoxOptions();
+        var firefoxOptions = new FirefoxOptions();
         firefoxOptions.setCapability("browser.download.folderList", 2);
         firefoxOptions.setCapability("browser.helperApps.alwaysAsk.force", false);
         firefoxOptions.setCapability("browser.helperApps.neverAsk.saveToDisk",
